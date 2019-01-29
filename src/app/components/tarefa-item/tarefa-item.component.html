@@ -1,0 +1,17 @@
+<div class="form-check">
+  <div class="row">
+    <div class="col-md-4">
+      <input class="form-check-input" type="checkbox" [(ngModel)]="tarefa.feito" [id]="'check' + tarefa.id" />
+    </div>
+    <div class="col-md-4">
+      <label
+        class="form-check-label"
+        [ngStyle]="{ 'text-decoration': tarefa.feito ? 'line-through' : 'none' }"
+        [for]="'check' + tarefa.id"
+      >
+        {{ tarefa.tarefa }}
+      </label>
+    </div>
+    <div class="col-md-4"><i class="fas fa-trash-alt cursor cor" (click)="deletar(tarefa.id)"></i></div>
+  </div>
+</div>

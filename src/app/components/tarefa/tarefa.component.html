@@ -1,0 +1,13 @@
+<app-tarefa-item-add (adicionarItem)="adicionar($event)"></app-tarefa-item-add>
+<br />
+<div class="card">
+  <h5 class="card-header">Tarefa</h5>
+  <div class="card-body">
+    <h5 class="card-title">Tarefas do dia</h5>
+    <app-tarefa-item
+      *ngFor="let item of listaDeTarefas"
+      [tarefa]="item"
+      (deletarItem)="deletar($event)"
+    ></app-tarefa-item>
+  </div>
+</div>
