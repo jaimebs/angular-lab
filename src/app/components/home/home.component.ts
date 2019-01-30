@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TarefaService } from 'src/app/services/tarefa.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  numeroDeTarefas: number = 0;
 
-  constructor() { }
+  constructor(private tarefaService: TarefaService) {}
 
   ngOnInit() {
+    this.numeroDeTarefas = this.tarefaService.lista().length;
   }
-
 }

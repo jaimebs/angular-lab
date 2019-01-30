@@ -1,1 +1,12 @@
-<h1>Home</h1>
+<div class="card" style="width: 18rem;">
+  <img src="../assets/img/tasks.jpg" class="card-img-top" alt="..." />
+  <div class="card-body text-center">
+    <h5 class="card-title"><h2>Tarefas</h2></h5>
+    <p class="card-text">
+      <span [ngClass]="numeroDeTarefas >= 3 ? 'badge badge-success' : 'badge badge-danger'">
+        <h3>{{ numeroDeTarefas }}</h3>
+      </span>
+    </p>
+    <a class="btn btn-primary" [routerLink]="['/tarefa']">Entrar</a>
+  </div>
+</div>
