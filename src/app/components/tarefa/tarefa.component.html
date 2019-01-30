@@ -4,6 +4,7 @@
   <h5 class="card-header">Tarefa</h5>
   <div class="card-body">
     <h5 class="card-title">Tarefas do dia</h5>
+    <div class="alert alert-warning" role="alert" *ngIf="listaDeTarefas.length === 0">Nenhum registro!</div>
     <app-tarefa-item
       *ngFor="let item of listaDeTarefas; let i = index"
       [tarefa]="item"
