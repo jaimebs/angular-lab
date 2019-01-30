@@ -10,17 +10,17 @@ export class TarefaService {
     return [
       {
         id: 1,
-        tarefa: 'Caminhar',
+        descricao: 'Caminhar',
         feito: false
       },
       {
         id: 2,
-        tarefa: 'Malhar',
+        descricao: 'Malhar',
         feito: false
       },
       {
         id: 3,
-        tarefa: 'Almoçar',
+        descricao: 'Almoçar',
         feito: false
       }
     ];

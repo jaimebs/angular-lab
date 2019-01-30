@@ -14,7 +14,7 @@ export class TarefaComponent implements OnInit {
   adicionar(event: any) {
     let tarefa = {
       id: Math.floor(Math.random() * 100),
-      tarefa: event
+      descricao: event
     };
     this.listaDeTarefas.push(tarefa);
   }
@@ -23,6 +23,10 @@ export class TarefaComponent implements OnInit {
     this.listaDeTarefas = this.listaDeTarefas.filter(item => {
       return item.id !== event;
     });
+  }
+
+  editar(event: any) {
+    this.listaDeTarefas[event.index] = event.tarefa;
   }
 
   ngOnInit() {

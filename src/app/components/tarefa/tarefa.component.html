@@ -5,9 +5,11 @@
   <div class="card-body">
     <h5 class="card-title">Tarefas do dia</h5>
     <app-tarefa-item
-      *ngFor="let item of listaDeTarefas"
+      *ngFor="let item of listaDeTarefas; let i = index"
       [tarefa]="item"
+      [index]="i"
       (deletarItem)="deletar($event)"
+      (editarItem)="editar($event)"
     ></app-tarefa-item>
   </div>
 </div>
