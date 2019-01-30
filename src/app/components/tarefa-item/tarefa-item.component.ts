@@ -27,7 +27,7 @@ export class TarefaItemComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.editarItem.emit({ tarefa: result, index: this.index });
+      if (result) this.editarItem.emit({ tarefa: result, index: this.index });
     });
   }
 

@@ -7,13 +7,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TarefaItemAddComponent implements OnInit {
   @Output() adicionarItem = new EventEmitter();
-  tarefa: string = '';
+  descricao: string = '';
 
   constructor() {}
 
   adicionar(item) {
     this.adicionarItem.emit(item);
-    this.tarefa = '';
+    this.descricao = '';
   }
 
   ngOnInit() {}

@@ -2,12 +2,21 @@
   <h5 class="card-header">Tarefa</h5>
   <div class="card-body">
     <h5 class="card-title">Editar tarefa</h5>
-    <form>
+    <form #form="ngForm">
       <div class="form-group">
-        <input type="text" class="form-control" name="descricao" placeholder="Tarefa" [(ngModel)]="tarefa.descricao" />
+        <input
+          type="text"
+          class="form-control"
+          name="descricao"
+          placeholder="Tarefa"
+          [(ngModel)]="tarefa.descricao"
+          required
+        />
       </div>
-      <button type="button" class="btn btn-outline-warning" [mat-dialog-close]="tarefa">Cancelar</button>
-      <button type="button" class="btn btn-outline-primary" (click)="onClickEditar()">Editar</button>
+      <button type="button" class="btn btn-outline-warning" [mat-dialog-close]="false">Cancelar</button>
+      <button type="button" class="btn btn-outline-primary" [disabled]="form.invalid" (click)="onClickEditar()">
+        Editar
+      </button>
     </form>
   </div>
 </div>
