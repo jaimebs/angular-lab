@@ -1,3 +1,4 @@
+import { MensagemService } from './../../services/mensagem.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -9,11 +10,12 @@ export class TarefaItemAddComponent implements OnInit {
   @Output() adicionarItem = new EventEmitter();
   descricao: string = '';
 
-  constructor() {}
+  constructor(private msg: MensagemService) {}
 
   adicionar(item) {
     this.adicionarItem.emit(item);
     this.descricao = '';
+    this.msg.mensagem('Tarefa inserida!', 'success');
   }
 
   ngOnInit() {}

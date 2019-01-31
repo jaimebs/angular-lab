@@ -1,3 +1,4 @@
+import { MensagemService } from './../../services/mensagem.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogTarefaItemComponent } from '../dialog-tarefa-item/dialog-tarefa-item.component';
@@ -8,7 +9,7 @@ import { DialogTarefaItemComponent } from '../dialog-tarefa-item/dialog-tarefa-i
   styleUrls: ['./tarefa-item.component.css']
 })
 export class TarefaItemComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private msg: MensagemService) {}
 
   @Input() tarefa: any;
   @Input() index: any;
@@ -28,6 +29,7 @@ export class TarefaItemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) this.editarItem.emit({ tarefa: result, index: this.index });
+      this.msg.mensagem('Tarefa editada!', 'warning');
     });
   }
 
