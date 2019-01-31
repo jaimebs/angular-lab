@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AlertModule } from 'ngx-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MatCheckboxModule, MatTooltipModule } from '@angular/material';
 
@@ -34,7 +36,8 @@ import { DialogTarefaItemComponent } from './components/dialog-tarefa-item/dialo
     BrowserAnimationsModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatTooltipModule
+    MatTooltipModule,
+    HttpClientModule
   ],
   entryComponents: [DialogTarefaItemComponent],
   providers: [],

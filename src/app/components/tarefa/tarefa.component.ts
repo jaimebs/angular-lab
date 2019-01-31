@@ -7,29 +7,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tarefa.component.css']
 })
 export class TarefaComponent implements OnInit {
-  listaDeTarefas: any;
+  listaDeTarefas: any[] = [];
 
   constructor(private tarefaService: TarefaService) {}
 
   adicionar(event: any) {
     let tarefa = {
-      id: Math.floor(Math.random() * 100),
-      descricao: event
+      descricao: event,
+      feito: false
     };
-    this.listaDeTarefas.push(tarefa);
+    this.tarefaService.salvar(tarefa).subscribe(() => {
+      this.getLista();
+    });
   }
 
   deletar(event: any) {
-    this.listaDeTarefas = this.listaDeTarefas.filter(item => {
-      return item.id !== event;
+    this.tarefaService.deletar(event).subscribe(() => {
+      this.getLista();
     });
   }
 
   editar(event: any) {
-    this.listaDeTarefas[event.index] = event.tarefa;
+    this.tarefaService.editar(event.tarefa).subscribe(() => {
+      this.getLista();
+    });
+  }
+
+  getLista() {
+    this.tarefaService.lista().subscribe(dado => {
+      this.listaDeTarefas = dado;
+    });
   }
 
   ngOnInit() {
-    this.listaDeTarefas = this.tarefaService.lista();
+    this.getLista();
   }
 }

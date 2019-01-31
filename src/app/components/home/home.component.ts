@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   constructor(private tarefaService: TarefaService) {}
 
   ngOnInit() {
-    this.numeroDeTarefas = this.tarefaService.lista().length;
+    this.tarefaService.lista().subscribe(item => {
+      this.numeroDeTarefas = item.length;
+    });
   }
 }
