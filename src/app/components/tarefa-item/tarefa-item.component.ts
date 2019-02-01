@@ -15,9 +15,12 @@ export class TarefaItemComponent implements OnInit {
   @Input() index: any;
   @Output() deletarItem = new EventEmitter();
   @Output() editarItem = new EventEmitter();
+  @Output() selecionarItem = new EventEmitter();
 
   deletar(id: number) {
-    this.deletarItem.emit(id);
+    this.msg.confirmacao('Alerta', 'Tem certeza que quer excluir?', 'warning', () => {
+      this.deletarItem.emit(id);
+    });
   }
 
   editar(tarefa) {
@@ -29,8 +32,12 @@ export class TarefaItemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) this.editarItem.emit({ tarefa: result, index: this.index });
-      this.msg.mensagem('Tarefa editada!', 'warning');
+      if (result) this.msg.mensagem('Tarefa editada!', 'warning');
     });
+  }
+
+  changeItem(tarefa) {
+    this.selecionarItem.emit({ tarefa });
   }
 
   ngOnInit() {}

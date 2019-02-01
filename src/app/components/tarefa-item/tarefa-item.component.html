@@ -5,6 +5,7 @@
         class="example-margin"
         [(ngModel)]="tarefa.feito"
         [ngStyle]="{ 'text-decoration': tarefa.feito ? 'line-through' : 'none' }"
+        (change)="changeItem(tarefa)"
       >
         {{ tarefa.descricao }}
       </mat-checkbox>

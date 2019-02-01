@@ -1,5 +1,4 @@
-<app-tarefa-item-add (adicionarItem)="adicionar($event)"></app-tarefa-item-add>
-<br />
+<app-tarefa-item-add (adicionarItem)="adicionar($event)"></app-tarefa-item-add> <br />
 <div class="card">
   <h5 class="card-header">Tarefa</h5>
   <div class="card-body">
@@ -11,6 +10,7 @@
       [index]="i"
       (deletarItem)="deletar($event)"
       (editarItem)="editar($event)"
+      (selecionarItem)="editar($event)"
     ></app-tarefa-item>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import Swal from 'sweetalert2';
+import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,24 @@ export class MensagemService {
       title: titulo,
       showConfirmButton: false,
       timer: 2000
+    });
+  }
+
+  confirmacao(titulo: string, texto: string, tipo: any, callback) {
+    Swal.fire({
+      title: titulo,
+      text: texto,
+      type: tipo,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, deletar!',
+      cancelButtonText: 'Cancelar!',
+      reverseButtons: true
+    }).then(result => {
+      if (!result.dismiss) {
+        callback();
+      }
     });
   }
 }
