@@ -5,7 +5,15 @@ import { AlertModule } from 'ngx-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatCheckboxModule, MatTooltipModule } from '@angular/material';
+import {
+  MatDialogModule,
+  MatCheckboxModule,
+  MatTooltipModule,
+  MatTableModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,6 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TarefaItemComponent } from './components/tarefa-item/tarefa-item.component';
 import { TarefaItemAddComponent } from './components/tarefa-item-add/tarefa-item-add.component';
 import { DialogTarefaItemComponent } from './components/dialog-tarefa-item/dialog-tarefa-item.component';
+import { ContatoComponent } from './components/contato/contato.component';
+import { ContatoFormComponent } from './components/contato-form/contato-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +36,9 @@ import { DialogTarefaItemComponent } from './components/dialog-tarefa-item/dialo
     FooterComponent,
     TarefaItemComponent,
     TarefaItemAddComponent,
-    DialogTarefaItemComponent
+    DialogTarefaItemComponent,
+    ContatoComponent,
+    ContatoFormComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,11 @@ import { DialogTarefaItemComponent } from './components/dialog-tarefa-item/dialo
     MatDialogModule,
     MatCheckboxModule,
     MatTooltipModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   entryComponents: [DialogTarefaItemComponent],
   providers: [],

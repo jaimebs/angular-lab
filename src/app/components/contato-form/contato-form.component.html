@@ -1,0 +1,13 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput name="nome" placeholder="Nome" [(ngModel)]="contato.nome" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput name="telefone" placeholder="Telefone" [(ngModel)]="contato.telefone" />
+  </mat-form-field>
+  <div class="example-button-row">
+    <button mat-raised-button color="warn" (click)="voltar()">Voltar</button>
+    <button mat-raised-button color="primary" (click)="salvar(contato)">Salvar</button>
+  </div>
+</form>
