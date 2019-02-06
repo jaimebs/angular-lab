@@ -17,7 +17,8 @@ export class TarefaComponent implements OnInit {
       feito: false
     };
     this.tarefaService.salvar(tarefa).subscribe(data => {
-      this.listaDeTarefas.push(data);
+      //this.listaDeTarefas.push(data);
+      this.listaDeTarefas = [...this.listaDeTarefas, data];
     });
   }
 

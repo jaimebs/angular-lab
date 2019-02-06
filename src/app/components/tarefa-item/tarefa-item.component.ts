@@ -27,7 +27,7 @@ export class TarefaItemComponent implements OnInit {
     let dialogRef = this.dialog.open(DialogTarefaItemComponent, {
       height: '300px',
       width: '500px',
-      data: Object.assign({}, tarefa)
+      data: { ...tarefa } //Object.assign({}, tarefa)
     });
 
     dialogRef.afterClosed().subscribe(result => {
