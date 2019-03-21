@@ -8,6 +8,6 @@ import { GenericoRestService } from './generico.service';
 })
 export class TarefaService extends GenericoRestService<any> {
   constructor(public http: HttpClient) {
-    super(http, `${environment.API_URL}tarefas/`);
+    super(http, `${environment.API_URL}/tarefas`);
   }
 }
